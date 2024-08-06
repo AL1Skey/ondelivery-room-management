@@ -1,0 +1,28 @@
+<!-- dashboard.component.html -->
+<header class="header-title">
+  <h4>Dashboard</h4>
+</header>
+<div id="dashboard-component">
+  <div class="dashboard-content">
+    <mat-card class="card">
+      <mat-card-content>
+        <p>{{ totalRooms }}</p>
+      </mat-card-content>
+      <mat-card-content>Total Ruangan</mat-card-content>
+    </mat-card>
+    <mat-card class="card">
+      <mat-card-content>
+        <p>{{ occupiedRooms }}</p>
+      </mat-card-content>
+      <mat-card-content>Ruangan Terisi</mat-card-content>
+    </mat-card>
+    <mat-card class="card">
+      <mat-card-content>
+        <p>{{ emptyRooms }}</p>
+      </mat-card-content>
+      <mat-card-content>Ruangan Kosong</mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

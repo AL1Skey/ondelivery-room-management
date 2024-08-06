@@ -1,0 +1,45 @@
+.add-rooms{
+    background-color: #3573e7;
+    
+    width: 7rem;
+    height: 6rem;
+    border-radius: 1rem;
+    text-align: center;
+    cursor: pointer !important;
+    
+    mat-icon{
+        font-size: 2rem;
+    }
+
+    *{
+        color: white !important;
+    }
+
+    *:hover{
+        background-color: #435f9c !important;
+
+    }
+}
+
+#rooms-list{
+    width: 100%;
+    margin: auto;
+    padding: 2rem;
+    margin: 1rem;
+    border: 1px solid #333;
+
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #333;
+        
+        th{
+            height: 10px;
+            border-right: 1px solid #333;
+        }
+        td{
+            
+            border-right: 1px solid #333;
+        }
+    }
+}

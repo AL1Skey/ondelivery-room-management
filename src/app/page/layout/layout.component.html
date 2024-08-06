@@ -1,0 +1,25 @@
+<!-- sidebar.component.html -->
+<div class="layout-container">
+  <div class="sidebar-container">
+    <mat-nav-list>
+      <p>OnDelivery</p>
+      <div class="user-image">
+        <img
+          src="https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png"
+          alt="OnDelivery"
+        />
+      </div>
+      <p>Username</p>
+    </mat-nav-list>
+    
+    <div *ngFor="let item of menuItems" class="dashboard-item">
+      <mat-icon>{{ item.icon }}</mat-icon>
+      <span style="color: aliceblue !important">{{ item.label }}</span>
+    </div>
+  </div>
+  <div class="layout-component">
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+/* dashboard.component.css */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+.header-title{
+    border-bottom: 1px solid #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#dashboard-component{
+    font-size: 1.6rem;
+    
+}
+  .dashboard-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    mat-card{
+        padding: 1rem;
+
+        mat-card-content{
+            width: 100%;
+        }
+    }
+  }
+  
+  .card {
+    margin: 20px;
+    width: 250px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    mat-card-title {
+        font-size: 18px;
+        font-weight: bold;
+        padding: 16px;
+        background-color: #333;
+        color: #fff;
+        border-radius: 10px 10px 0 0;
+      }
+  }
+  
+  
+  .card mat-card-content {
+    padding: 16px;
+  }
