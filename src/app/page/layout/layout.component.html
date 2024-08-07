@@ -11,10 +11,12 @@
       </div>
       <p>Username</p>
     </mat-nav-list>
-    
-    <div *ngFor="let item of menuItems" class="dashboard-item">
-      <mat-icon>{{ item.icon }}</mat-icon>
-      <span style="color: aliceblue !important">{{ item.label }}</span>
+    <div class="sidebar-content">
+      
+      <div *ngFor="let item of menuItems" class="sidebar-item">
+        <mat-icon>{{ item.icon }}</mat-icon>
+        <span style="color: aliceblue !important">{{ item.label }}</span>
+      </div>
     </div>
   </div>
   <div class="layout-component">

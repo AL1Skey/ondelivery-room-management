@@ -18,6 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListItem, MatListModule } from '@angular/material/list';
+import { RoomDetailComponent } from './page/room-detail/room-detail.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MatListItem, MatListModule } from '@angular/material/list';
     NewBookingComponent,
     RoomsComponent,
     UsersComponent,
-    DashboardComponent
+    DashboardComponent,
+    RoomDetailComponent
   ],
   imports: [
     BrowserModule,

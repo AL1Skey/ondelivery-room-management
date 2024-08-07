@@ -7,6 +7,7 @@ import { RoomsComponent } from './page/rooms/rooms.component';
 import { NewBookingComponent } from './page/new-booking/new-booking.component';
 import { BookingListComponent } from './page/booking-list/booking-list.component';
 import { BookingCalenderComponent } from './page/booking-calender/booking-calender.component';
+import { RoomDetailComponent } from './page/room-detail/room-detail.component';
 
 const routes: Routes = [
   {
@@ -18,7 +19,10 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   },
-  
+  {
+    path:'rooms/detail/:id',
+    component: RoomDetailComponent
+  },
   {
     path: '',
     component:LayoutComponent,

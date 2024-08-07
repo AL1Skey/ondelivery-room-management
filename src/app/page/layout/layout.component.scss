@@ -9,9 +9,7 @@
   height: 100%;
   background-color: #3573e7;
   color: #fff !important;
-  padding: 20px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  width: 30%;
 
   
 }
@@ -36,22 +34,15 @@ div {
   }
 }
 
-mat-list-item {
-  padding: 16px;
-  border-bottom: 1px solid #29188f;
-  color: #fff !important;
-}
-
-mat-list-item:hover {
-  background-color: #29188f;
-  color: #fff !important;
-}
-
-.dashboard-item{
+.sidebar-content{
+  padding: 1rem;
+.sidebar-item{
     padding: 1rem;
+    cursor: pointer;
 
     &:hover{
-        border:5px solid white;
+      border:1px solid white !important;
+      color: #fff !important;
     }
 
     mat-icon {
@@ -61,7 +52,7 @@ mat-list-item:hover {
       padding: 0 !important;
     }
 }
-
+}
 .layout-component {
   width: 100%;
   height: 100%;
