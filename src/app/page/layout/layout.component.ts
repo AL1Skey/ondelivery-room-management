@@ -21,7 +21,7 @@ export class LayoutComponent {
 
   checkRole(item:any):boolean{
     console.log(['super admin','admin','hr admin','head departement'].includes(this.role) && item.label === 'Room Management',item.label)
-    return ['super admin','admin','hr admin','head departement'].includes(this.role) && item.label === 'Room Management'
+    return ['super admin','admin','hr admin','head departement','staff'].includes(this.role) && item.label === 'Room Management'
   }
   logout(){
     localStorage.removeItem('token');
