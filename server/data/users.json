@@ -1,4 +1,5 @@
 [
+    
     {
         "name": "John Doe",
         "username": "user1",
@@ -62,6 +63,7 @@
         "role": "super admin",
         "image": "https://picsum.photos/seed/user9/200/300"
     },
+    
     {
         "name": "Olivia Thomas",
         "username": "user10",
@@ -82,6 +84,13 @@
         "password": "password12",
         "role": "guest",
         "image": "https://picsum.photos/seed/user12/200/300"
+    },
+    {
+        "name": "Theresia Situmeang",
+        "username": "kaktere",
+        "password": "bolehkahakumenikahdenganmu?",
+        "role": "head departement",
+        "image":"https://ucarecdn.com/b620d7c2-e6d8-48ff-bfc5-768f1f563f56/Screenshot20240811at054853TheresiaSitumeangtheresiasitumeangInstagramphotosandvideos.png"
     },
     {
         "name": "Andrew Lee",

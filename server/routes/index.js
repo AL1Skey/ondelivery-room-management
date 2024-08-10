@@ -1,5 +1,5 @@
 const express = require("express")
-const { Authentication } = require("../middleware/auth")
+const { Authentication, Authorization } = require("../middleware/auth")
 const AuthController = require("../controller/AuthController")
 const BookingControllers = require("../controller/BookingController")
 const RoomsControllers = require("../controller/RoomsController")
@@ -31,9 +31,9 @@ router.delete('/rooms/:id',RoomsControllers.deleteRoom)
 // Booking
 router.get('/bookings',BookingControllers.getBookings)
 router.get('/bookings/:id',BookingControllers.getBookingById)
-router.post('/bookings',BookingControllers.createBooking)
-router.put('/bookings/:id',BookingControllers.updateBooking)
-router.delete('/bookings/:id',BookingControllers.deleteBooking)
+router.post('/bookings',Authentication,Authorization.primaryRole,BookingControllers.createBooking)
+router.put('/bookings/:id',Authentication,Authorization.primaryRole,BookingControllers.updateBooking)
+router.delete('/bookings/:id',Authentication,Authorization.primaryRole,BookingControllers.deleteBooking)
 
 router.use(errHandling)
 

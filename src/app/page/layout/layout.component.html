@@ -14,10 +14,25 @@
     <div class="sidebar-content">
       
         <a [routerLink]="[item.link]" routerLinkActive="active" *ngFor="let item of menuItems" >
-          <div class="sidebar-item">
+          <ng-container *ngIf="checkRole(item); else guestNav">
+            <div class="sidebar-item" >
+              <mat-icon>{{ item.icon }}</mat-icon>
+              <span>{{ item.label }}</span>
+            </div>
+            
+          </ng-container>
+          <ng-template #guestNav>
+            <div class="sidebar-item" *ngIf="item.label !== 'Room Management'">
+              <mat-icon>{{ item.icon }}</mat-icon>
+              <span>{{ item.label }} </span>
+            </div>
+          </ng-template>
+        </a>
 
-            <mat-icon>{{ item.icon }}</mat-icon>
-            <span>{{ item.label }} </span>
+        <a [routerLink]="['/login']" (click)="logout()">
+          <div class="sidebar-item" >
+            <mat-icon>settings_power</mat-icon>
+            <span>Logout</span>
           </div>
         </a>
 
