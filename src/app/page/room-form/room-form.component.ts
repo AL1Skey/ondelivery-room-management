@@ -80,8 +80,8 @@ export class RoomFormComponent implements OnInit {
       this.roomService.createBooking({...this.roomForm.value, userid: this.checkedUsers}).subscribe({
         next: (res: any) => {
           console.log(res);
-          // this.router.navigate(['/dashboard']);
-          document.getElementById('success-modal')?.click();
+          this.router.navigate(['/booking/success']);
+         
         },
         error: (err: any) => {
           console.log(err);

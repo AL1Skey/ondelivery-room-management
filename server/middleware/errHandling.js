@@ -7,6 +7,7 @@ const errHandling = (err, req, res,next) => {
         res.status(400).json({message:err.errors[0].message
         })
     }
+    
     if(err instanceof ValidationError){
         res.status(400).json({message:err.errors[0].message})
     }

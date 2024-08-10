@@ -1,0 +1,28 @@
+<!-- rooms.component.html -->
+<div id="rooms-component">
+    <div class="rooms-content">
+        <mat-card class="card" id="rooms-list"> 
+          <header class="header-title">
+              <h5>Room Overview</h5>
+            </header>
+          <table>
+            <tr>
+              <th>Room</th>
+              <th>Employee</th>
+              <th>Description</th>
+            </tr>
+            <tr *ngFor="let room of rooms">
+              <td>
+                  {{ room.room }}
+
+              </td>
+              <td>{{ room.employee }}</td>
+              <td>{{ room.description }}</td>
+            </tr>
+          </table>
+      </mat-card>
+    </div>
+  </div>
+  
+  <router-outlet></router-outlet>
+  

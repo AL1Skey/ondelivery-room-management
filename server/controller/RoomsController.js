@@ -1,4 +1,5 @@
-const {Rooms} = require('../models/index')
+const { QueryTypes } = require('sequelize');
+const {Rooms, sequelize} = require('../models/index')
 class RoomsController{
     static async createRoom(req,res,next){
         try {
@@ -14,6 +15,31 @@ class RoomsController{
             const rooms = await Rooms.findAll();
             console.log(rooms)
             res.status(200).json(rooms)
+        } catch (error) {
+            next(error)
+        }
+    }
+
+    static async getAllDataRooms(req,res,next){
+        try {
+            let totalRooms = await sequelize.query('SELECT COUNT(id) FROM "Rooms"',{
+                type:sequelize.QueryTypes.SELECT
+            })
+            let occupiedRooms = await sequelize.query('SELECT COUNT(roomid) FROM "BookingRooms"',{
+                type:QueryTypes.SELECT
+            })
+            let emptyRooms = await sequelize.query('SELECT COUNT(r.id) FROM "Rooms" r LEFT JOIN "BookingRooms" b ON r.id=b.roomid WHERE b.roomid is null',{
+                type:QueryTypes.SELECT
+            })
+            totalRooms = totalRooms[0].count;
+            occupiedRooms = occupiedRooms[0].count;
+            emptyRooms = emptyRooms[0].count;
+            console.log(totalRooms,occupiedRooms,emptyRooms)
+            res.status(200).json({
+                totalRooms,
+                occupiedRooms,
+                emptyRooms
+            })
         } catch (error) {
             next(error)
         }

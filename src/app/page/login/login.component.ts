@@ -23,6 +23,7 @@ export class LoginComponent {
           localStorage.setItem('token', res.access_token);
           localStorage.setItem('name', res.name);
           localStorage.setItem('role', res.role);
+          localStorage.setItem('image', res.image);
           console.log(res);
           this.router.navigate(['/dashboard']);
         }

@@ -3,120 +3,140 @@
         "name": "John Doe",
         "username": "user1",
         "password": "password1",
-        "role": "super admin"
+        "role": "super admin",
+        "image": "https://picsum.photos/seed/user1/200/300"
     },
     {
         "name": "Jane Smith",
         "username": "user2",
         "password": "password2",
-        "role": "hr admin"
+        "role": "hr admin",
+        "image": "https://picsum.photos/seed/user2/200/300"
     },
     {
         "name": "Michael Johnson",
         "username": "user3",
         "password": "password3",
-        "role": "staff"
+        "role": "staff",
+        "image": "https://picsum.photos/seed/user3/200/300"
     },
     {
         "name": "Emily Davis",
         "username": "user4",
         "password": "password4",
-        "role": "guest"
+        "role": "guest",
+        "image": "https://picsum.photos/seed/user4/200/300"
     },
     {
         "name": "David Wilson",
         "username": "user5",
         "password": "password5",
-        "role": "super admin"
+        "role": "super admin",
+        "image": "https://picsum.photos/seed/user5/200/300"
     },
     {
         "name": "Sarah Anderson",
         "username": "user6",
         "password": "password6",
-        "role": "hr admin"
+        "role": "hr admin",
+        "image": "https://picsum.photos/seed/user6/200/300"
     },
     {
         "name": "Christopher Martinez",
         "username": "user7",
         "password": "password7",
-        "role": "staff"
+        "role": "staff",
+        "image": "https://picsum.photos/seed/user7/200/300"
     },
     {
         "name": "Jessica Taylor",
         "username": "user8",
         "password": "password8",
-        "role": "guest"
+        "role": "guest",
+        "image": "https://picsum.photos/seed/user8/200/300"
     },
     {
         "name": "Matthew Brown",
         "username": "user9",
         "password": "password9",
-        "role": "super admin"
+        "role": "super admin",
+        "image": "https://picsum.photos/seed/user9/200/300"
     },
     {
         "name": "Olivia Thomas",
         "username": "user10",
         "password": "password10",
-        "role": "hr admin"
+        "role": "hr admin",
+        "image": "https://picsum.photos/seed/user10/200/300"
     },
     {
         "name": "Daniel Clark",
         "username": "user11",
         "password": "password11",
-        "role": "staff"
+        "role": "staff",
+        "image": "https://picsum.photos/seed/user11/200/300"
     },
     {
         "name": "Sophia Rodriguez",
         "username": "user12",
         "password": "password12",
-        "role": "guest"
+        "role": "guest",
+        "image": "https://picsum.photos/seed/user12/200/300"
     },
     {
         "name": "Andrew Lee",
         "username": "user13",
         "password": "password13",
-        "role": "super admin"
+        "role": "super admin",
+        "image": "https://picsum.photos/seed/user13/200/300"
     },
     {
         "name": "Isabella Walker",
         "username": "user14",
         "password": "password14",
-        "role": "hr admin"
+        "role": "hr admin",
+        "image": "https://picsum.photos/seed/user14/200/300"
     },
     {
         "name": "Joseph Hall",
         "username": "user15",
         "password": "password15",
-        "role": "staff"
+        "role": "staff",
+        "image": "https://picsum.photos/seed/user15/200/300"
     },
     {
         "name": "Mia Young",
         "username": "user16",
         "password": "password16",
-        "role": "guest"
+        "role": "guest",
+        "image": "https://picsum.photos/seed/user16/200/300"
     },
     {
         "name": "Ethan Hernandez",
         "username": "user17",
         "password": "password17",
-        "role": "super admin"
+        "role": "super admin",
+        "image": "https://picsum.photos/seed/user17/200/300"
     },
     {
         "name": "Ava King",
         "username": "user18",
         "password": "password18",
-        "role": "hr admin"
+        "role": "hr admin",
+        "image": "https://picsum.photos/seed/user18/200/300"
     },
     {
         "name": "Alexander Scott",
         "username": "user19",
         "password": "password19",
-        "role": "staff"
+        "role": "staff",
+        "image": "https://picsum.photos/seed/user19/200/300"
     },
     {
         "name": "Charlotte Green",
         "username": "user20",
         "password": "password20",
-        "role": "guest"
+        "role": "guest",
+        "image": "https://picsum.photos/seed/user20/200/300"
     }
 ]

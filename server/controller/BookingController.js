@@ -5,9 +5,14 @@ class BookingControllers {
     try {
       const body = req.body;
       console.log(body);
+      if(body.userid.length>1){
       body.userid.map(async (id) => {
         await BookingRooms.create({ ...body, userid:id });
       });
+    } 
+    else{
+      await BookingRooms.create(body);
+    }
       res.status(200).json({ message: "Booking Has Been Created", body });
     } catch (error) {
       next(error);

@@ -21,6 +21,7 @@ import { RoomDetailComponent } from './page/room-detail/room-detail.component';
 import { RoomFormComponent } from './page/room-form/room-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SuccessComponent } from './page/success/success.component';
+import { RoomTableComponent } from './page/room-table/room-table.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { SuccessComponent } from './page/success/success.component';
     RoomDetailComponent,
     RoomFormComponent,
     SuccessComponent,
+    RoomTableComponent,
   ],
   imports: [
     BrowserModule,

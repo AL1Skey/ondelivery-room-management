@@ -16,5 +16,6 @@ export class LayoutComponent {
     link:'/rooms'
   }]
   username: string = localStorage.getItem('name')||"";
+  image: string = localStorage.getItem('image')||"";
 
 }

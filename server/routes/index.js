@@ -22,10 +22,11 @@ router.delete('/users/:id',UserController.deleteUser)
 
 // Rooms
 router.get('/rooms',RoomsControllers.getRooms)
-router.get('/booking/:id',RoomsControllers.getRoomById)
+router.get('/rooms/overview',RoomsControllers.getAllDataRooms)
+router.get('/rooms/:id',RoomsControllers.getRoomById)
 router.post('/rooms',RoomsControllers.createRoom)
-router.put('/booking/:id',RoomsControllers.updateRoom)
-router.delete('/booking/:id',RoomsControllers.deleteRoom)
+router.put('/rooms/:id',RoomsControllers.updateRoom)
+router.delete('/rooms/:id',RoomsControllers.deleteRoom)
 
 // Booking
 router.get('/bookings',BookingControllers.getBookings)
@@ -75,6 +76,8 @@ module.exports = router
  *           schema:
  *             type: object
  *             properties:
+ *               name:
+ *                 type: string
  *               username:
  *                 type: string
  *               password:
@@ -143,7 +146,7 @@ module.exports = router
  *     responses:
  *       200:
  *         description: Successful operation
- * /booking/{id}:
+ * /room/{id}:
  *   get:
  *     summary: Get room by ID
  *     description: Retrieve a room by its ID
@@ -209,6 +212,34 @@ module.exports = router
  *     responses:
  *       200:
  *         description: Successful operation
+ *   post:
+ *     summary: Create booking
+ *     description: Create a new booking
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               roomid:
+ *                 type: integer
+ *               time:
+ *                 type: string
+ *                 format: date-time
+ *               description:
+ *                 type: string
+ *               userid:
+ *                 type: integer
+ *             required:
+ *               - roomid
+ *               - time
+ *               - userid
+ *     responses:
+ *       201:
+ *         description: Booking created successfully
+ *       400:
+ *         description: Bad request
  * /bookings/{id}:
  *   get:
  *     summary: Get booking by ID
@@ -225,33 +256,6 @@ module.exports = router
  *         description: Successful operation
  *       404:
  *         description: Booking not found
- *   post:
- *     summary: Create booking
- *     description: Create a new booking
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               roomid:
- *                 type: integer
- *               time:
- *                 type: string
- *               description:
- *                 type: string
- *               userid:
- *                 type: integer
- *             required:
- *               - roomid
- *               - time
- *               - userid
- *     responses:
- *       201:
- *         description: Booking created successfully
- *       400:
- *         description: Bad request
  *   put:
  *     summary: Update booking
  *     description: Update a booking by its ID
@@ -273,6 +277,7 @@ module.exports = router
  *                 type: integer
  *               time:
  *                 type: string
+ *                 format: date-time
  *               description:
  *                 type: string
  *               userid:

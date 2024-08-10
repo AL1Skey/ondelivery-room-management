@@ -15,7 +15,10 @@ export class RoomService implements OnInit{
   getRooms(){
     return this.http.get(`${this.baseUrl}/rooms`);
   }
-  
+
+  getRoomsOverview(){
+    return this.http.get(`${this.baseUrl}/rooms/overview`);
+  }
 
   // Booking
   getBooking(){

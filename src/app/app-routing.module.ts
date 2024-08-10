@@ -7,6 +7,7 @@ import { RoomsComponent } from './page/rooms/rooms.component';
 import { RoomDetailComponent } from './page/room-detail/room-detail.component';
 import { RoomFormComponent } from './page/room-form/room-form.component';
 import { SuccessComponent } from './page/success/success.component';
+import { RoomTableComponent } from './page/room-table/room-table.component';
 
 const routes: Routes = [
   {
@@ -28,7 +29,13 @@ const routes: Routes = [
     children:[
       {
         path:'dashboard',
-        component:DashboardComponent
+        component:DashboardComponent,
+        children:[
+          {
+            path:'',
+            component:RoomTableComponent
+          }
+        ]
       },
       {
         path:'rooms',
