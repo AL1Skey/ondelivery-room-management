@@ -4,45 +4,33 @@
 </header>
 <div id="rooms-component">
   <div class="rooms-content">
-    <mat-list-item class="add-rooms">
-      <div>
-        <mat-icon>add</mat-icon>
-      </div>
-      <div>
-        <p>Book</p>
-      </div>
-    </mat-list-item>
+    <a [routerLink]="['/booking/create']" >
+      <mat-list-item class="add-rooms">
+        <div>
+          <mat-icon>add</mat-icon>
+        </div>
+        <div>
+          <p>Book</p>
+        </div>
+      </mat-list-item>
+    </a>
     <mat-card class="card" id="rooms-list"> 
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-            <!--- Note that these columns can be defined in any order.
-                  The actual rendered columns are set as a property on the row definition" -->
-          
-            <!-- Name Column -->
-            <ng-container matColumnDef="room">
-              <th mat-header-cell *matHeaderCellDef> Room </th>
-              <td mat-cell *matCellDef="let element"> {{element.room}} </td>
-            </ng-container>
-          
-            <!-- Weight Column -->
-            <ng-container matColumnDef="employee">
-              <th mat-header-cell *matHeaderCellDef> Employee </th>
-              <td mat-cell *matCellDef="let element"> {{element.employee}} </td>
-            </ng-container>
-          
-            <!-- Symbol Column -->
-            <ng-container matColumnDef="description">
-              <th mat-header-cell *matHeaderCellDef> Description </th>
-              <td mat-cell *matCellDef="let element"> {{element.description}} </td>
-            </ng-container>
-          
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-          </table>
-          
-          
-          
-          
+        <table>
+          <tr>
+            <th>Room</th>
+            <th>Employee</th>
+            <th>Description</th>
+          </tr>
+          <tr *ngFor="let room of rooms">
+            <td>
+              <a [routerLink]="['/booking/detail/'+room.id]">
+                {{ room.room }}
+              </a>
+            </td>
+            <td>{{ room.employee }}</td>
+            <td>{{ room.description }}</td>
+          </tr>
+        </table>
     </mat-card>
   </div>
 </div>

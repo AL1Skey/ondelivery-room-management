@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { RoomService } from '../../services/room.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -13,17 +13,26 @@ export class LoginComponent {
     "username":"",
     "password":""
   }
-  constructor(private roomService: RoomService, private router:Router) { }
+  constructor(private auth: AuthService, private router:Router) { }
 
   onLogin(){
-    this.roomService.login(this.loginObj).subscribe((res:any)=>{
-      if(res.result){
-        localStorage.setItem('user',JSON.stringify(res.result))
-        this.router.navigate(['/dashboard']);
+    this.auth.login(this.loginObj).subscribe({
+      next: (res:any)=>{
+        console.log(res);
+        if(res.access_token){
+          localStorage.setItem('token', res.access_token);
+          localStorage.setItem('name', res.name);
+          localStorage.setItem('role', res.role);
+          console.log(res);
+          this.router.navigate(['/dashboard']);
+        }
+        else{
+          alert(res.message);
+        }
+      },
+      error: (err:any)=>{
+        alert(err.error.message);
       }
-    },
-    error=>{
-      alert("Internal server error")
     })
   }
 

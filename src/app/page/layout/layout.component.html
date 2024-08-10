@@ -9,14 +9,18 @@
           alt="OnDelivery"
         />
       </div>
-      <p>Username</p>
+      <p>{{ username }}</p>
     </mat-nav-list>
     <div class="sidebar-content">
       
-      <div *ngFor="let item of menuItems" class="sidebar-item">
-        <mat-icon>{{ item.icon }}</mat-icon>
-        <span style="color: aliceblue !important">{{ item.label }}</span>
-      </div>
+        <a [routerLink]="[item.link]" routerLinkActive="active" *ngFor="let item of menuItems" >
+          <div class="sidebar-item">
+
+            <mat-icon>{{ item.icon }}</mat-icon>
+            <span>{{ item.label }} </span>
+          </div>
+        </a>
+
     </div>
   </div>
   <div class="layout-component">

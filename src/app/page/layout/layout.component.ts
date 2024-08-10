@@ -8,10 +8,13 @@ import { Component } from '@angular/core';
 export class LayoutComponent {
   menuItems:any[] = [{
     icon:'home',
-    label:'Dashboard'
+    label:'Dashboard',
+    link:'/dashboard'
   },{
     icon:'exit_to_app',
-    label:'Room Management'
+    label:'Room Management',
+    link:'/rooms'
   }]
+  username: string = localStorage.getItem('name')||"";
 
 }

@@ -1,0 +1,122 @@
+[
+    {
+        "name": "John Doe",
+        "username": "user1",
+        "password": "password1",
+        "role": "super admin"
+    },
+    {
+        "name": "Jane Smith",
+        "username": "user2",
+        "password": "password2",
+        "role": "hr admin"
+    },
+    {
+        "name": "Michael Johnson",
+        "username": "user3",
+        "password": "password3",
+        "role": "staff"
+    },
+    {
+        "name": "Emily Davis",
+        "username": "user4",
+        "password": "password4",
+        "role": "guest"
+    },
+    {
+        "name": "David Wilson",
+        "username": "user5",
+        "password": "password5",
+        "role": "super admin"
+    },
+    {
+        "name": "Sarah Anderson",
+        "username": "user6",
+        "password": "password6",
+        "role": "hr admin"
+    },
+    {
+        "name": "Christopher Martinez",
+        "username": "user7",
+        "password": "password7",
+        "role": "staff"
+    },
+    {
+        "name": "Jessica Taylor",
+        "username": "user8",
+        "password": "password8",
+        "role": "guest"
+    },
+    {
+        "name": "Matthew Brown",
+        "username": "user9",
+        "password": "password9",
+        "role": "super admin"
+    },
+    {
+        "name": "Olivia Thomas",
+        "username": "user10",
+        "password": "password10",
+        "role": "hr admin"
+    },
+    {
+        "name": "Daniel Clark",
+        "username": "user11",
+        "password": "password11",
+        "role": "staff"
+    },
+    {
+        "name": "Sophia Rodriguez",
+        "username": "user12",
+        "password": "password12",
+        "role": "guest"
+    },
+    {
+        "name": "Andrew Lee",
+        "username": "user13",
+        "password": "password13",
+        "role": "super admin"
+    },
+    {
+        "name": "Isabella Walker",
+        "username": "user14",
+        "password": "password14",
+        "role": "hr admin"
+    },
+    {
+        "name": "Joseph Hall",
+        "username": "user15",
+        "password": "password15",
+        "role": "staff"
+    },
+    {
+        "name": "Mia Young",
+        "username": "user16",
+        "password": "password16",
+        "role": "guest"
+    },
+    {
+        "name": "Ethan Hernandez",
+        "username": "user17",
+        "password": "password17",
+        "role": "super admin"
+    },
+    {
+        "name": "Ava King",
+        "username": "user18",
+        "password": "password18",
+        "role": "hr admin"
+    },
+    {
+        "name": "Alexander Scott",
+        "username": "user19",
+        "password": "password19",
+        "role": "staff"
+    },
+    {
+        "name": "Charlotte Green",
+        "username": "user20",
+        "password": "password20",
+        "role": "guest"
+    }
+]

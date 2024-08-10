@@ -1,0 +1,116 @@
+#room-form-component {
+  width: 100%;
+  height: 100%;
+  background-color: #7b7b7b;
+  box-shadow: #000;
+
+  #room-form {
+    width: 80%;
+    height: 80%;
+    transform: translate(7rem, 4rem);
+    background-color: white;
+    border: 1px solid #000;
+    border-radius: 1rem;
+    padding: 1rem;
+
+    #room-form-content {
+      padding: 10px;
+      .first-row {
+        display: flex;
+        gap: 2rem;
+        padding: 1rem;
+        .field {
+          width: 50%;
+
+          #field-room {
+            width: 100%;
+            padding: 0.3rem;
+            border-radius: 0.5rem;
+          }
+          #field-time {
+            width: 100%;
+            padding: 0.3rem;
+            border-radius: 0.5rem;
+          }
+        }
+      }
+      .second-row {
+        padding: 1rem;
+        .field {
+          width: 100%;
+          #field-description {
+            width: 100%;
+            padding: 0.3rem;
+            border-radius: 0.5rem;
+          }
+        }
+      }
+      .third-row {
+        .field {
+          margin: 1rem 1rem !important;
+
+          
+          
+          .table-users {
+            height: 10rem;
+            width: 100%;
+            overflow-y: scroll;
+            scrollbar-width: none;
+            border-radius: 0.3rem;
+            border: #333 solid 1px;
+
+            table {
+              padding: 0 !important;
+              border-collapse: collapse;
+
+              tr {
+                td {
+                  border: #333 solid 1px;
+                  padding: 0.1rem 1.5rem;
+                }
+                #table-form-icon {
+                  width: 5%;
+                }
+              }
+            }
+          }
+          .reset-checkout{
+            display: flex;
+            justify-content: center;
+            margin-top:2px;
+            button{width: 9rem; background: red; color: white; border: none;border-radius: 1rem;}
+          }
+        }
+      }
+    }
+  }
+}
+
+.form-submit {
+  text-decoration: none;
+  width: 96%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: end;
+  transform: translateY(-1.6rem);
+
+  .button-submit{
+    border: none;
+    border-radius: 0.3rem;
+    box-shadow: 0 2px 3px 0 #333;
+    padding: 0.4rem;
+    cursor: pointer;
+    background: #2c75b6;
+    color: white;
+  }
+  a{
+  .button-cancel{
+    border: none;
+    border-radius: 0.3rem;
+    box-shadow: 0 2px 3px 0 #333;
+    padding: 0.4rem;
+    cursor: pointer;
+  }
+}
+}

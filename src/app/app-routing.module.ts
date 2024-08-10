@@ -4,10 +4,9 @@ import { LoginComponent } from './page/login/login.component';
 import { LayoutComponent } from './page/layout/layout.component';
 import { DashboardComponent } from './page/dashboard/dashboard.component';
 import { RoomsComponent } from './page/rooms/rooms.component';
-import { NewBookingComponent } from './page/new-booking/new-booking.component';
-import { BookingListComponent } from './page/booking-list/booking-list.component';
-import { BookingCalenderComponent } from './page/booking-calender/booking-calender.component';
 import { RoomDetailComponent } from './page/room-detail/room-detail.component';
+import { RoomFormComponent } from './page/room-form/room-form.component';
+import { SuccessComponent } from './page/success/success.component';
 
 const routes: Routes = [
   {
@@ -20,7 +19,7 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path:'rooms/detail/:id',
+    path:'booking/detail/:id',
     component: RoomDetailComponent
   },
   {
@@ -35,19 +34,22 @@ const routes: Routes = [
         path:'rooms',
         component:RoomsComponent
       },
-      {
-        path:'newBooking',
-        component:NewBookingComponent
-      },
-      {
-        path:'bookings',
-        component:BookingListComponent
-      },
-      {
-        path:'booking-calender',
-        component:BookingCalenderComponent
-      }
+      
+      
     ]
+    
+  },
+  {
+    path:'booking/create',
+    component:RoomFormComponent
+  },
+  {
+    path:'booking/detail/:id',
+    component:RoomDetailComponent
+  },
+  {
+    path:'booking/success',
+    component:SuccessComponent
   }
 ];
 

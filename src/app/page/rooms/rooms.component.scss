@@ -3,9 +3,13 @@
     border-bottom: 1px solid #333;
 }
 
+mat-header-cell{
+    padding: 0;
+}
+
 .add-rooms{
 
-    background-color: #3573e7;
+    background-color:#2c75b6;
     
     width: 7rem;
     height: 6rem;
@@ -34,6 +38,7 @@
     padding: 2rem;
     margin: 1rem;
     border: 1px solid #333;
+    color: #333;
 
     table{
         width: 100%;
@@ -42,11 +47,12 @@
         
         th{
             height: 10px;
-            border-right: 1px solid #333;
+            padding: 2px 4px;
+            border: 1px solid #333;
         }
         td{
-            
-            border-right: 1px solid #333;
+            padding: 2px 40px;
+            border: 1px solid #333;
         }
     }
 }

@@ -1,1 +1,42 @@
-<p>room-detail works!</p>
+
+<!-- rooms.component.html -->
+
+  <div id="room-detail-component">
+    <div id="room-detail">
+        <header class="header-title">
+            <h4 style="padding-left: 2rem;">Room List</h4>
+          </header>
+        <div id="room-detail-content">
+          <mat-card class="card"> 
+            <div>
+                <p>Time</p>
+                <p>{{ room.booking.time }}</p>
+            </div>
+            <div>
+                <p>Description</p>
+                <p>{{ room.booking.description }}</p>
+            </div>
+            <div>
+                <p>Employee</p>
+                <table>
+                  <tr *ngFor="let employee of room.employee">
+                    <td id="table-detail-icon">
+                      <mat-icon style="transform: translateY(3px);">crop_3_2</mat-icon>
+                    </td>
+                    <td id="table-detail-content">{{ employee.name }}</td>
+                   
+                  </tr>
+                </table>
+            </div>
+        </mat-card>
+        <div id="room-nav">
+            <a [routerLink]="['/rooms']" >
+                <button>Go Back</button>
+            </a>
+        </div>
+        </div>
+    </div>
+  </div>
+  
+  <router-outlet></router-outlet>
+  

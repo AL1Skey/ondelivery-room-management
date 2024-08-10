@@ -4,14 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './page/login/login.component';
-import { BookingCalenderComponent } from './page/booking-calender/booking-calender.component';
-import { BookingListComponent } from './page/booking-list/booking-list.component';
+
 import { LayoutComponent } from './page/layout/layout.component';
-import { NewBookingComponent } from './page/new-booking/new-booking.component';
+
 import { RoomsComponent } from './page/rooms/rooms.component';
 import { UsersComponent } from './page/users/users.component';
 import { DashboardComponent } from './page/dashboard/dashboard.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTable, MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
@@ -19,24 +18,28 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListItem, MatListModule } from '@angular/material/list';
 import { RoomDetailComponent } from './page/room-detail/room-detail.component';
+import { RoomFormComponent } from './page/room-form/room-form.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { SuccessComponent } from './page/success/success.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    BookingCalenderComponent,
-    BookingListComponent,
     LayoutComponent,
-    NewBookingComponent,
     RoomsComponent,
     UsersComponent,
     DashboardComponent,
-    RoomDetailComponent
+    RoomDetailComponent,
+    RoomFormComponent,
+    SuccessComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
     HttpClientModule,
     MatTableModule,
     MatIconModule,
@@ -44,9 +47,9 @@ import { RoomDetailComponent } from './page/room-detail/room-detail.component';
     MatToolbarModule,
     MatListModule,
     MatListItem,
-    MatTableModule
+    MatTableModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

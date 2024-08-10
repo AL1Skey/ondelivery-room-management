@@ -1,0 +1,60 @@
+
+<!-- rooms.component.html -->
+
+<div id="room-form-component">
+    <div id="room-form">
+        <header class="header-title">
+            <h4 style="padding-left: 2rem;">Book Room</h4>
+          </header>
+        <form [formGroup]="roomForm" (ngSubmit)="onSubmit()" id="room-form-content">
+            <div class="first-row">
+                <div class="field">
+                    <label>Room</label><br>
+                    <select name="room" id="field-room" formControlName="roomid">
+                        <option *ngFor="let room of rooms" [ngValue]="room.id">{{ room.name }}</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Time</label><br>
+                    <input type="date" name="time" id="field-time" formControlName="time">
+                </div>
+            </div>
+            <div class="second-row">
+                <div class="field">
+                    <label>Description</label><br>
+                    <textarea name="description" id="field-description" formControlName="description" ></textarea>
+                </div>
+            </div>
+            <div class="third-row">
+                <div class="field">
+                    <label>Employees</label><br>
+                    <input type="text" (input)="searchUser($event)" id="field-search" style="width: 100%;height: 1.2rem; margin-bottom: 1rem; border-radius: 5px; padding: 4px;" placeholder="Enter Text Here" >
+                    <div class="table-users">
+                        <table style="height: 1rem;">
+                            <tr *ngFor="let employee of displayUsers;let i = index">
+                              <td id="table-form-icon">
+                                <input type="checkbox" [value]="employee.id" (change)="checkUser($event)">
+                              </td>
+                              <td id="table-form-content">{{ employee.name }} </td>
+                            </tr>
+                          </table>
+                    </div>
+                    <div class="reset-checkout">
+                        <button (click)="resetAll()" id="reset-button">Reset</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-submit">
+                <a [routerLink]="['/rooms']">
+                    <button type="submit" class="button-cancel">Cancel</button>
+                </a>
+                <button type="submit" class="button-submit">Confirm</button>
+            </div>
+        </form>
+        
+    </div>
+  </div>
+  
+  <router-outlet></router-outlet>
+  
