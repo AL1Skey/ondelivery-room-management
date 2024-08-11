@@ -42,6 +42,14 @@ module.exports = router
 
 /**
  * @swagger
+ * components:
+ *   securitySchemes:
+ *     BasicAuth:
+ *       type: http
+ *       scheme: basic
+ *     BearerAuth:
+ *       type: http
+ *       scheme: bearer
  * /login:
  *   post:
  *     summary: User login
@@ -146,7 +154,28 @@ module.exports = router
  *     responses:
  *       200:
  *         description: Successful operation
- * /room/{id}:
+ *   post:
+ *     summary: Create room
+ *     description: Create a new room
+ *     security:
+ *       - BearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *             required:
+ *               - name
+ *     responses:
+ *       201:
+ *         description: Room created successfully
+ *       400:
+ *         description: Bad request
+ * /rooms/{id}:
  *   get:
  *     summary: Get room by ID
  *     description: Retrieve a room by its ID
@@ -172,6 +201,8 @@ module.exports = router
  *           type: integer
  *         required: true
  *         description: ID of the room
+ *     security:
+ *       - BearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -200,6 +231,8 @@ module.exports = router
  *           type: integer
  *         required: true
  *         description: ID of the room
+ *     security:
+ *       - BearerAuth: []
  *     responses:
  *       204:
  *         description: Room deleted successfully
@@ -209,12 +242,16 @@ module.exports = router
  *   get:
  *     summary: Get all bookings
  *     description: Retrieve a list of all bookings
+ *     security:
+ *       - BearerAuth: []
  *     responses:
  *       200:
  *         description: Successful operation
  *   post:
  *     summary: Create booking
  *     description: Create a new booking
+ *     security:
+ *       - BearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -244,6 +281,8 @@ module.exports = router
  *   get:
  *     summary: Get booking by ID
  *     description: Retrieve a booking by its ID
+ *     security:
+ *       - BearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -266,6 +305,8 @@ module.exports = router
  *           type: integer
  *         required: true
  *         description: ID of the booking
+ *     security:
+ *       - BearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -303,9 +344,18 @@ module.exports = router
  *           type: integer
  *         required: true
  *         description: ID of the booking
+ *     security:
+ *       - BearerAuth: []
  *     responses:
  *       204:
  *         description: Booking deleted successfully
  *       404:
  *         description: Booking not found
  */
+
+//asdasdfasdf
+
+
+
+
+//asdasdfasdf
