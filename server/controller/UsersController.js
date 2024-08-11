@@ -12,6 +12,7 @@ class UserController{
             return res.status(200).json(users)
             
         } catch (error) {
+ 
             next(error)
             
         }
@@ -26,6 +27,7 @@ class UserController{
             })
             return res.status(200).json(user)
         } catch (error) {
+            console.log("Error in GetUserById")
             next(error)
         }
     }

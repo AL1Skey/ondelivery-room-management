@@ -1,19 +1,19 @@
-const User = require("../models/index");
+const {User} = require("../models/index");
 const { verifyToken } = require("../tools/jwt");
 
 const Authentication = async(req, res, next) => {
   try {
     const { authorization } = req.headers;
-
     if (!authorization) {
       throw { msg: "Invalid Token" };
     } else {
       const [type, access_token] = authorization.split(" ");
+      
 
       if (type !== "Bearer") {
         throw { msg: "Invalid Token" };
       }
-
+      
       const { id } = verifyToken(access_token);
 
       if (!id) {
@@ -54,7 +54,7 @@ class Authorization {
 
   static primaryRole(req,res,next){
     try {
-        if(req.user.rol.toLowerCase()!=="guest"){
+        if(req.user.role.toLowerCase()!=="guest"){
             next()
         }
         else{

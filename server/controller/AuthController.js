@@ -8,6 +8,7 @@ class AuthController {
       const user = await User.create(body);
       res.status(200).json({ message: "User Has Been Created", body });
     } catch (error) {
+ 
       next(error);
     }
   }
@@ -28,7 +29,7 @@ class AuthController {
         throw { msg: "User Doesn't Exists" };
       } else {
         if (password === user.password) {
-          console.log(process.env.JWT_SECRET);
+ 
           const access_token = generateToken(
             { id: user.id },
             process.env.JWT_SECRET,

@@ -13,7 +13,7 @@ class RoomsController{
     static async getRooms(req,res,next){
         try {
             const rooms = await Rooms.findAll();
-            console.log(rooms)
+ 
             res.status(200).json(rooms)
         } catch (error) {
             next(error)
@@ -34,7 +34,6 @@ class RoomsController{
             totalRooms = totalRooms[0].count;
             occupiedRooms = occupiedRooms[0].count;
             emptyRooms = emptyRooms[0].count;
-            console.log(totalRooms,occupiedRooms,emptyRooms)
             res.status(200).json({
                 totalRooms,
                 occupiedRooms,

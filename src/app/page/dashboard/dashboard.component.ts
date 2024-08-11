@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
         this.emptyRooms = res.emptyRooms;
       },
       error: (err: any) => {
-        console.log(err);
+        console.log(err, 'error in dashboard room service getRoomsOverview');
         alert(err.error.message);
       },
     });

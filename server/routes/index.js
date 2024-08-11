@@ -15,22 +15,22 @@ router.post('/forgot-password',AuthController.forgotPassword)
 router.post('/change-password',AuthController.changePassword)
 
 // Users
-router.get('/users',UserController.getUsers)
-router.get('/users/:id',UserController.getUserById)
-router.put('/users/:id',UserController.updateUser)
-router.delete('/users/:id',UserController.deleteUser)
+router.get('/users',Authentication,Authorization.primaryRole,UserController.getUsers)
+router.get('/users/:id',Authentication,Authorization.primaryRole,UserController.getUserById)
+router.put('/users/:id',Authentication,Authorization.primaryRole,UserController.updateUser)
+router.delete('/users/:id',Authentication,Authorization.primaryRole,UserController.deleteUser)
 
 // Rooms
-router.get('/rooms',RoomsControllers.getRooms)
 router.get('/rooms/overview',RoomsControllers.getAllDataRooms)
-router.get('/rooms/:id',RoomsControllers.getRoomById)
-router.post('/rooms',RoomsControllers.createRoom)
-router.put('/rooms/:id',RoomsControllers.updateRoom)
-router.delete('/rooms/:id',RoomsControllers.deleteRoom)
+router.get('/rooms',RoomsControllers.getRooms)
+router.get('/rooms/:id',Authentication,Authorization.primaryRole,RoomsControllers.getRoomById)
+router.post('/rooms',Authentication,Authorization.primaryRole,RoomsControllers.createRoom)
+router.put('/rooms/:id',Authentication,Authorization.primaryRole,RoomsControllers.updateRoom)
+router.delete('/rooms/:id',Authentication,Authorization.primaryRole,RoomsControllers.deleteRoom)
 
 // Booking
-router.get('/bookings',BookingControllers.getBookings)
-router.get('/bookings/:id',BookingControllers.getBookingById)
+router.get('/bookings',Authentication,Authorization.primaryRole,BookingControllers.getBookings)
+router.get('/bookings/:id',Authentication,Authorization.primaryRole,BookingControllers.getBookingById)
 router.post('/bookings',Authentication,Authorization.primaryRole,BookingControllers.createBooking)
 router.put('/bookings/:id',Authentication,Authorization.primaryRole,BookingControllers.updateBooking)
 router.delete('/bookings/:id',Authentication,Authorization.primaryRole,BookingControllers.deleteBooking)

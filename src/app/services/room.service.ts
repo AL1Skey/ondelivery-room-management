@@ -13,22 +13,23 @@ export class RoomService implements OnInit{
 
   // Room
   getRooms(){
-    return this.http.get(`${this.baseUrl}/rooms`);
+    return this.http.get(`${this.baseUrl}/rooms`, {headers:{Authorization:`Bearer ${this.token}`}});
   }
 
   getRoomsOverview(){
+    
     return this.http.get(`${this.baseUrl}/rooms/overview`);
   }
 
   // Booking
   getBooking(){
-    return this.http.get(`${this.baseUrl}/bookings`);
+    return this.http.get(`${this.baseUrl}/bookings`, {headers:{Authorization:`Bearer ${this.token}`}});
   }
   getBookingDetail(id:string){
-    return this.http.get(`${this.baseUrl}/bookings/${id}`);
+    return this.http.get(`${this.baseUrl}/bookings/${id}`, {headers:{Authorization:`Bearer ${this.token}`}});
   }
   createBooking(data:any){
-    return this.http.post(`${this.baseUrl}/bookings`, data);
+    return this.http.post(`${this.baseUrl}/bookings`, data, {headers:{Authorization:`Bearer ${this.token}`}});
   }
 
   ngOnInit(){

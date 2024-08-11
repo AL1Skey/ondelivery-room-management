@@ -4,7 +4,7 @@ class BookingControllers {
   static async createBooking(req, res, next) {
     try {
       const body = req.body;
-      console.log(body);
+ 
       if(body.userid.length>1){
       body.userid.map(async (id) => {
         await BookingRooms.create({ ...body, userid:id });
@@ -26,7 +26,6 @@ class BookingControllers {
           types: QueryTypes.SELECT,
         }
       );
-      console.log(bookings);
       res.status(200).json(bookings);
     } catch (error) {
       next(error);
@@ -49,7 +48,7 @@ class BookingControllers {
         }
       );
       const toArray = employee.map(employees => employees);
-      // booking.map(bookings => console.log(bookings));
+ 
       res.status(200).json({ booking,employee:toArray });
     } catch (error) {
       next(error);

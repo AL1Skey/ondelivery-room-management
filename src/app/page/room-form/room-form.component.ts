@@ -43,8 +43,8 @@ export class RoomFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.roomForm = this.formBuilder.group({
-      roomid: [''],
-      time: [''],
+      roomid: ['', Validators.required],
+      time: ['', Validators.required],
       description: [''],
       userid:this.formBuilder.array([])
     });
