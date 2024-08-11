@@ -6,6 +6,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
+## Backend Setup
+
+Run `npm i` to install package
+configure postgres user and password in config/config.json in server directory
+run `npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all` to create and seed the database
+run `npx nodemon` to run the server
+
 ## Backend server
 
 Go to server directory. run `npx nodemon` for a dev server. Navigate to `http://localhost:3000`.
