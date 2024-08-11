@@ -8,10 +8,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Backend Setup
 
-Run `npm i` to install package
-configure postgres user and password in config/config.json in server directory
-run `npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all` to create and seed the database
-run `npx nodemon` to run the server
+- Run `npm i` to install package
+- configure postgres user and password in config/config.json in server directory
+- run `npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all` to create and seed the database
+- run `npx nodemon` to run the server
 
 ## Backend server
 
