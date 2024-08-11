@@ -8,7 +8,6 @@ class AuthController {
       const user = await User.create(body);
       res.status(200).json({ message: "User Has Been Created", body });
     } catch (error) {
- 
       next(error);
     }
   }
@@ -29,22 +28,19 @@ class AuthController {
         throw { msg: "User Doesn't Exists" };
       } else {
         if (password === user.password) {
- 
           const access_token = generateToken(
             { id: user.id },
             process.env.JWT_SECRET,
             3600
           );
-          res
-            .status(200)
-            .json({
-              message: "Login Success",
-              access_token,
-              role: user.role,
-              username: user.username,
-              name: user.name,
-              image: user.image,
-            });
+          res.status(200).json({
+            message: "Login Success",
+            access_token,
+            role: user.role,
+            username: user.username,
+            name: user.name,
+            image: user.image,
+          });
         } else {
           throw { msg: "Password Doesn't Match" };
         }
@@ -95,13 +91,22 @@ class AuthController {
   static async changeRole(req, res, next) {
     try {
       const role = req.body.role;
-      const user = await User.update(
+      const { id } = req.params;
+      let user = await User.findOne({
+        where: {
+          id,
+        },
+      });
+      if (!user) {
+        throw { msg: "User Doesn't Exists" };
+      }
+      user = await User.update(
         {
           role,
         },
         {
           where: {
-            username: req.user.username,
+            id,
           },
         }
       );

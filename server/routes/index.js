@@ -12,13 +12,16 @@ const router = express.Router()
 router.post('/login',AuthController.login)
 router.post('/register',AuthController.register)
 router.post('/forgot-password',AuthController.forgotPassword)
-router.post('/change-password',AuthController.changePassword)
+router.put('/change-password',AuthController.changePassword)
+router.put('/change-role/:id',AuthController.changeRole)
 
 // Users
 router.get('/users',Authentication,Authorization.primaryRole,UserController.getUsers)
+router.post('/users',Authentication,Authorization.primaryRole,UserController.createUser)
 router.get('/users/:id',Authentication,Authorization.primaryRole,UserController.getUserById)
 router.put('/users/:id',Authentication,Authorization.primaryRole,UserController.updateUser)
 router.delete('/users/:id',Authentication,Authorization.primaryRole,UserController.deleteUser)
+
 
 // Rooms
 router.get('/rooms/overview',RoomsControllers.getAllDataRooms)
@@ -122,7 +125,7 @@ module.exports = router
  *       404:
  *         description: User not found
  * /reset-password:
- *   post:
+ *   put:
  *     summary: Reset password
  *     description: Reset user's password
  *     requestBody:
@@ -147,6 +150,25 @@ module.exports = router
  *         description: Password reset successful
  *       400:
  *         description: Bad request
+ * /change-role/{id}:
+ *   put:
+ *      summary: Change user role
+ *      description: Update the role of a user with the specified ID
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          required: true
+ *          type: integer
+ *          description: The ID of the user to update
+ *      responses:
+ *      200:
+ *          description: Role updated successfully
+ *      401:
+ *          description: Unauthorized
+ *      404:
+ *          description: User not found
+ *      500:
+ *          description: Internal Server Error
  * /rooms:
  *   get:
  *     summary: Get all rooms

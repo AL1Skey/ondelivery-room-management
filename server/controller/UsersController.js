@@ -32,6 +32,18 @@ class UserController{
         }
     }
 
+    static async createUser(req,res,next){
+        try {
+            const body = req.body;
+            const user = await User.create(body);
+            res.status(200).json({message:"User Has Been Created",user})
+        }
+        catch (error) {
+            console.log("Error in CreateUser")
+            next(error)
+        }
+    }
+
     static async updateUser(req,res,next){
         try {
             const {id} = req.params;
