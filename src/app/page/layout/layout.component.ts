@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-layout',
@@ -19,15 +21,35 @@ export class LayoutComponent {
   role:string = localStorage.getItem('role')||"";
   image: string = localStorage.getItem('image')||"";
 
+  constructor(private router:Router){}
+
   checkRole(item:any):boolean{
     console.log(['super admin','admin','hr admin','head departement'].includes(this.role) && item.label === 'Room Management',item.label)
     return ['super admin','admin','hr admin','head departement','staff'].includes(this.role) && item.label === 'Room Management'
   }
   logout(){
-    localStorage.removeItem('token');
-    localStorage.removeItem('name');
-    localStorage.removeItem('role');
-    localStorage.removeItem('image');
+    Swal.fire({
+      title: 'Are you sure?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No, go back'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem('token');
+        localStorage.removeItem('name');
+        localStorage.removeItem('role');
+        localStorage.removeItem('image');
+        Swal.fire(
+          'Success!',
+          'Logout Success.',
+          'success'
+        )
+        this.router.navigate(['/login']);
+      }
+    })
+
+    
   }
 
 }

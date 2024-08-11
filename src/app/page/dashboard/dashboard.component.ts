@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RoomService } from '../../services/room.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,9 +12,12 @@ export class DashboardComponent implements OnInit {
   occupiedRooms: number = 0;
   emptyRooms: number = 0;
 
-  constructor(private roomService: RoomService) {}
+  constructor(private roomService: RoomService,private router:Router) {}
 
   ngOnInit(): void {
+    if(!localStorage.getItem('token')){
+      this.router.navigate(['/login']);
+    }
     this.roomService.getRoomsOverview().subscribe({
       next: (res: any) => {
         this.totalRooms = res.totalRooms;

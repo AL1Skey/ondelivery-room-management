@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -25,14 +25,27 @@ export class LoginComponent {
           localStorage.setItem('role', res.role);
           localStorage.setItem('image', res.image);
           console.log(res);
+          Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: 'Login Success'
+          })
           this.router.navigate(['/dashboard']);
         }
         else{
-          alert(res.message);
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Invalid Token'
+          })
         }
       },
       error: (err:any)=>{
-        alert(err.error.message);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: err.error.message
+        })
       }
     })
   }
