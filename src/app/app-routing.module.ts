@@ -8,12 +8,14 @@ import { RoomDetailComponent } from './page/room-detail/room-detail.component';
 import { RoomFormComponent } from './page/room-form/room-form.component';
 import { SuccessComponent } from './page/success/success.component';
 import { RoomTableComponent } from './page/room-table/room-table.component';
+import { AuthService } from './services/auth.service';
 
 const routes: Routes = [
   {
     path:'',
     redirectTo:'login',
-    pathMatch:'full'
+    pathMatch:'full',
+    
   },
   {
     path: 'login',
@@ -21,11 +23,13 @@ const routes: Routes = [
   },
   {
     path:'booking/detail/:id',
-    component: RoomDetailComponent
+    component: RoomDetailComponent,
+    canActivate:[AuthService],
   },
   {
     path: '',
     component:LayoutComponent,
+    canActivate:[AuthService],
     children:[
       {
         path:'dashboard',
@@ -41,22 +45,23 @@ const routes: Routes = [
         path:'rooms',
         component:RoomsComponent
       },
-      
-      
     ]
     
   },
   {
     path:'booking/create',
-    component:RoomFormComponent
+    component:RoomFormComponent,
+    canActivate:[AuthService],
   },
   {
     path:'booking/detail/:id',
-    component:RoomDetailComponent
+    component:RoomDetailComponent,
+    canActivate:[AuthService],
   },
   {
     path:'booking/success',
-    component:SuccessComponent
+    component:SuccessComponent,
+    canActivate:[AuthService],
   }
 ];
 

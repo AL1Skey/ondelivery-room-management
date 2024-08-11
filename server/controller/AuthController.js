@@ -79,7 +79,7 @@ class AuthController {
         },
         {
           where: {
-            username: req.user.username,
+            username: req.user?.username || req.body?.username,
           },
         }
       );

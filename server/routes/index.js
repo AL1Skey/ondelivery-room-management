@@ -12,8 +12,8 @@ const router = express.Router()
 router.post('/login',AuthController.login)
 router.post('/register',AuthController.register)
 router.post('/forgot-password',AuthController.forgotPassword)
-router.put('/change-password',AuthController.changePassword)
-router.put('/change-role/:id',AuthController.changeRole)
+router.put('/reset-password',AuthController.changePassword)
+router.put('/change-role/:id',Authentication,Authorization.primaryRole,AuthController.changeRole)
 
 // Users
 router.get('/users',Authentication,Authorization.primaryRole,UserController.getUsers)
@@ -160,6 +160,8 @@ module.exports = router
  *          required: true
  *          type: integer
  *          description: The ID of the user to update
+ *      security:
+ *        - BearerAuth: []
  *      responses:
  *      200:
  *          description: Role updated successfully
@@ -197,6 +199,15 @@ module.exports = router
  *         description: Room created successfully
  *       400:
  *         description: Bad request
+ * /rooms/overview:
+ *   get:
+ *     summary: Get rooms overview
+ *     description: Retrieve a count of total, occupied, and empty rooms 
+ *     responses:
+ *       200:
+ *         description: Successful operation
+ *       500:
+ *         description: Internal Server Error
  * /rooms/{id}:
  *   get:
  *     summary: Get room by ID
@@ -208,6 +219,8 @@ module.exports = router
  *           type: integer
  *         required: true
  *         description: ID of the room
+ *     security:
+ *       - BearerAuth: []
  *     responses:
  *       200:
  *         description: Successful operation
