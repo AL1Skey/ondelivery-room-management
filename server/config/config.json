@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "postgres",
-    "password": "123321",
+    "password": "postgres",
     "database": "ondelivery_room_management",
     "host": "127.0.0.1",
     "dialect": "postgres"
